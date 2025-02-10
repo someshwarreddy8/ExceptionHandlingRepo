@@ -1,4 +1,4 @@
-package com.cbre.CbreDemo.exception.messages;
+package com.cbre.CbreDemo.exception.message;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;

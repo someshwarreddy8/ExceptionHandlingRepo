@@ -1,7 +1,7 @@
 package com.cbre.CbreDemo.service;
 
 import com.cbre.CbreDemo.exception.ApiError;
-import com.cbre.CbreDemo.exception.messages.MessageArguments;
+import com.cbre.CbreDemo.exception.message.MessageArguments;
 import com.cbre.CbreDemo.util.ExceptionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,11 +13,9 @@ public class TestService {
 
     public void ExceptionTest() {
 
-        try {
-            throw exceptionUtil.getCBREException(ApiError.UNHANDLED_EXCEPTION, new MessageArguments("XYZZZ", "IOS OR ANDROID"));
-        } catch (Exception e) {
 
-        }
+            throw exceptionUtil.getCBREException(ApiError.UNHANDLED_EXCEPTION, new MessageArguments("XYZZZ", "IOS OR ANDROID"));
+
     }
 
 }

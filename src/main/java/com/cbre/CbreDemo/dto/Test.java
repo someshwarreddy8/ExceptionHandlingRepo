@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Test {
     @NotNull(message = "Name cannot be null")
-    private TestDemo name;
+    private TestDemo testDemo;
 }

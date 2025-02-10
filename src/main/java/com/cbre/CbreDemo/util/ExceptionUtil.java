@@ -3,10 +3,8 @@ package com.cbre.CbreDemo.util;
 
 import com.cbre.CbreDemo.exception.ApiError;
 import com.cbre.CbreDemo.exception.CBREException;
-import com.cbre.CbreDemo.exception.messages.MessageArguments;
+import com.cbre.CbreDemo.exception.message.MessageArguments;
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BeanPropertyBindingResult;
@@ -15,19 +13,13 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import java.lang.reflect.Method;
-import java.util.Locale;
 
 @Component
 public class ExceptionUtil {
-    @Autowired
-    private MessageSource messageSource;
 
     public CBREException getCBREException(ApiError apiError, MessageArguments messageArguments) {
-        String message = messageSource.getMessage(apiError.getCode(), messageArguments.getArguments(), Locale.getDefault());
-        if (message == null) {
-            message = "Default error message"; // Provide a default message if the key is not found
-        }
-        return new CBREException(message, null, apiError, messageArguments.getArguments());
+
+        return new CBREException(null, null, apiError, messageArguments.getArguments());
     }
 
     public CBREException getCBREException(String message, Throwable throwable, ApiError apiError, MessageArguments messageArguments) {
