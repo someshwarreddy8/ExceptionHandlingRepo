@@ -15,8 +15,8 @@ public class TestController {
     @Autowired
     private TestService testService;
 
-    @PostMapping("/test-api")
-    public ResponseEntity<?> testApi(@Valid @RequestBody Test test) {
+    @GetMapping("/test-api")
+    public ResponseEntity<?> testApi() {
         testService.ExceptionTest();
         return new ResponseEntity<>("success", HttpStatus.OK);
     }
