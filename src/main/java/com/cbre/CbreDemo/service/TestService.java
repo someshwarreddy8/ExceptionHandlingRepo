@@ -14,7 +14,7 @@ public class TestService {
     public void ExceptionTest() {
 
 
-            throw exceptionUtil.getCBREException(ApiError.UNHANDLED_EXCEPTION, new MessageArguments("webhook testing", "IOS OR ANDROID"));
+            throw exceptionUtil.getCBREException(ApiError.UNHANDLED_EXCEPTION, new MessageArguments("feat: webhook testing", "IOS OR ANDROID"));
 
     }
 
